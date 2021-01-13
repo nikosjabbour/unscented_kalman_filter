@@ -20,7 +20,7 @@ class Modelstate:
     def generate_data(self):
         for i in range(1, self.n):
             self.x[i, :] = self.model_state(i, self.x[i-1, :]) + self.u[i, :]
-            self.y[i, :] = self.model_output(i, self.y[i-1, :]) + self.v[i. :]
+            self.y[i, :] = self.model_output(self.x[i, :]) + self.v[i, :]
 
     def model_state(self, i, x_p):
         self.xi[0] = 0.5 * x_p[0] - 0.1 * x_p[1] + 0.7 * (x_p[0]/(1 + x_p[0]**2)) + 2.2 * np.cos(1.2 * (i-1))
