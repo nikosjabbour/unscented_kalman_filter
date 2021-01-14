@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Modelstate:
+class ModelState:
 
     def __init__(self, n, x_0):
 
@@ -14,8 +14,8 @@ class Modelstate:
 
         self.x[0, :] = x_0[:, 0]
 
-        self.u = np.random.normal(0., 1.0, (n, 2)) # process noise
-        self.v = np.random.normal(0., 1.0, (n, 2)) # measurement noise
+        self.u = np.random.normal(0., 1.0, (n, 2))  # process noise
+        self.v = np.random.normal(0., 1.0, (n, 2))  # measurement noise
 
     def generate_data(self):
         for i in range(1, self.n):
